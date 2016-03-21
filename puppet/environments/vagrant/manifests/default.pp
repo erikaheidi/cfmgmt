@@ -22,7 +22,8 @@ file { $doc_root:
 #copy index html file
 file { "$doc_root/index.html":
     ensure => "present",
-    source => "puppet:///modules/main/index.html"
+    source => "puppet:///modules/main/index.html",
+    require => File[$doc_root]
 }
 
 #set vhost template
